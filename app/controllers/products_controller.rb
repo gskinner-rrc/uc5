@@ -5,6 +5,10 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    @average = Product.all.average(:price)
+    @maximum = Product.maximum("price")
+    @distinct = Product.distinct.count(:title)
+    @sum_stock_quantity = Product.sum(:stock_quantity)
   end
 
   # GET /products/1
@@ -71,4 +75,5 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :price, :stock_quantity)
     end
+    
 end

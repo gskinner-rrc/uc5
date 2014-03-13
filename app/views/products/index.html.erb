@@ -24,10 +24,29 @@
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+      
     <% end %>
   </tbody>
 </table>
 
+<%= link_to 'New Product', new_product_path %>
+
+
+<section>
+  <p>Average price of a product: <%= @average %></p>
+  <p>Maximum price of a product: <%= @maximum %></p>
+  <p>Total number of unique products: <%= @distinct %></p>
+  <p>Sum of all stock quantity: <%= @sum_stock_quantity %></p>
+  
+  
+</section>
+
+<section>
+  <% (1..100).each do |i| %>
+    <p><%= "chunky bacon" %></p>
+  <% end %>
+</section>
+
 <br>
 
-<%= link_to 'New Product', new_product_path %>
+
